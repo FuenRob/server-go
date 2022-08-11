@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: serverdb
+    command: --sql_mode=""
+    restart: always
+    environment:
+      - MYSQL_DATABASE=mydatabase
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user
+    ports:
+      - "13306:3306"
+    volumes:
+      - "./data/db/mysql:/var/lib/mysql"
+  server-go:
+    build: .
+    ports:
+      - 8080:9999
+    depends_on:
+      - db
