@@ -18,12 +18,6 @@ func InitConnection() *gorm.DB {
 		log.Panic("Connection error")
 	}
 	db.AutoMigrate(&model.User{})
-	user := &model.User{Name: "Roberto"}
-
-	db.Create(&user)
-
-	var userRegister model.User
-	db.First(&userRegister, 1)
 
 	return db
 }
