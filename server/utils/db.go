@@ -3,8 +3,8 @@ package utils
 import (
 	"log"
 
-	config "github.com/fuenrob/server-go/config"
-	model "github.com/fuenrob/server-go/model"
+	config "github.com/fuenrob/server-go/configs"
+	model "github.com/fuenrob/server-go/models"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

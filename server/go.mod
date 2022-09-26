@@ -25,6 +25,8 @@ require (
 
 replace github.com/fuenrob/server-go/utils => ./utils
 
-replace github.com/fuenrob/server-go/config => ./config
+replace github.com/fuenrob/server-go/configs => ./configs
 
-replace github.com/fuenrob/server-go/model => ./model
+replace github.com/fuenrob/server-go/models => ./models
+
+replace github.com/fuenrob/server-go/controllers => ./controllers

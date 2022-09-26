@@ -3,10 +3,8 @@ package config
 import "fmt"
 
 const (
-	//DBHost     = "serverdb"
-	//DBPort     = "3306"
-	DBHost     = "127.0.0.1"
-	DBPort     = "13306"
+	DBHost     = "serverdb"
+	DBPort     = "3306"
 	DBUser     = "root"
 	DBPassword = "root"
 	DBName     = "mydatabase"
