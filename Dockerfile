@@ -2,11 +2,11 @@ FROM golang
 
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+COPY server/go.mod ./
+COPY server/go.sum ./
 RUN go mod download
 
-COPY . ./
+COPY ./server/ ./
 
 RUN go build -o /server
 
