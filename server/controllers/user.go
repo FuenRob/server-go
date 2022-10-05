@@ -40,7 +40,10 @@ func GetUserById(db *gorm.DB) func(c echo.Context) error {
 func CreateNewUser(db *gorm.DB) func(c echo.Context) error {
 	return func(c echo.Context) error {
 		name := c.FormValue("name")
-		user := &model.User{Name: name}
+		email := c.FormValue("email")
+		password := c.FormValue("password")
+
+		user := &model.User{Name: name, Email: email, Password: password}
 
 		result := db.Create(&user)
 
@@ -56,6 +59,9 @@ func UpdateUserById(db *gorm.DB) func(c echo.Context) error {
 	return func(c echo.Context) error {
 		id := c.Param("id")
 		name := c.FormValue("name")
+		email := c.FormValue("email")
+		password := c.FormValue("password")
+
 		var user model.User
 
 		resultGet := db.First(&user, id)
@@ -65,6 +71,8 @@ func UpdateUserById(db *gorm.DB) func(c echo.Context) error {
 		}
 
 		user.Name = name
+		user.Email = email
+		user.Password = password
 
 		resultSave := db.Save(&user)
 

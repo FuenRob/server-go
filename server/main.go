@@ -12,6 +12,8 @@ func main() {
 
 	e := echo.New()
 
+	e.POST("/login", controllers.Login(db))
+
 	e.GET("/users", controllers.GetAllUsers(db))
 	e.GET("/users/:id", controllers.GetUserById(db))
 	e.POST("/users", controllers.CreateNewUser(db))
