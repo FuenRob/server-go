@@ -4,12 +4,22 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt"
+	middleware "github.com/labstack/echo/v4/middleware"
 )
 
 type jwtCustomClaims struct {
 	Name  string `json:"name"`
 	Admin bool   `json:"admin"`
 	jwt.StandardClaims
+}
+
+func GetConfigJWT() middleware.JWTConfig {
+	config := middleware.JWTConfig{
+		Claims:     &jwtCustomClaims{},
+		SigningKey: []byte("secret"),
+	}
+
+	return config
 }
 
 func GenerateUserToken(name string) string {

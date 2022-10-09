@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	model "github.com/fuenrob/server-go/models"
-	"github.com/labstack/echo"
+	echo "github.com/labstack/echo/v4"
 	"gorm.io/gorm"
 )
 
